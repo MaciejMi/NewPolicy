@@ -29,9 +29,9 @@ window.onload = showMoreNews;
 showMoreBtn.addEventListener('click', showMoreNews);
 
 function showMoreNews() {
-  if(hiddenNews.style.display == 'none'){
+  if (hiddenNews.style.display == 'none') {
     hiddenNews.style.display = 'block';
-   showMoreBtn.textContent = 'Ukryj';
+    showMoreBtn.textContent = 'Ukryj';
   } else {
     hiddenNews.style.display = 'none';
     showMoreBtn.textContent = 'Wyświetl więcej';

@@ -108,7 +108,7 @@ header {
       }
 
       li {
-        font-size: 1.5rem;
+        font-size: 20px;
         margin: 1.5rem 2rem;
         border-left: 0.3rem solid $main-color;
 
@@ -146,7 +146,6 @@ header {
   background-position: center;
   min-height: 80vh;
   border-radius: 0 0 50px 50px;
-  padding: 0;
 
   .content {
     max-width: 50rem;
@@ -171,7 +170,7 @@ header {
 
     h3 {
       font-family: 'Raleway', sans-serif;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 700;
       line-height: 150%;
       color: $white;
@@ -198,6 +197,8 @@ header {
     gap: 50px;
     align-items: center;
     justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
 
     .box {
       max-width: 280px;
@@ -206,17 +207,10 @@ header {
       box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
       overflow: hidden;
 
-      // !!!!!!!!! FIX IT !!!!!!!!!!!!!!!
-
       .image {
         width: 100%;
         overflow: hidden;
-
-        img {
-          object-fit: cover;
-          width: 100%;
-          height: 100%;
-        }
+        border-radius: 24px 24px 0 0;
       }
 
       .content {
@@ -242,6 +236,11 @@ header {
           font-weight: 600;
           color: $main-color;
           gap: 5px;
+          transition: all 0.3s linear;
+
+          &:hover {
+            letter-spacing: 1px;
+          }
         }
 
         span {
@@ -265,51 +264,40 @@ header {
   .hidden {
     display: none;
   }
-  
 }
 
 // Home About
 
 .home-about {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-   margin-bottom: 50px;
-  
-  .image {
-    order: 2;
-   
-    img {
-      max-width: 260px;
-      max-height: 260px;
+    .image {
+      order: 2;
+
+      img {
+        margin-top: 50px;
+        max-width: 260px;
+        max-height: 260px;
+      }
+    }
+
+    .content {
+      h3 {
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      p {
+        margin: 20px 0;
+      }
     }
   }
-
-  .content {
-
-    h3 {
-      font-size: 24px;
-      font-weight: 500;
-    }
-
-    p {
-      margin: 20px 0;
-    }
-
-  }
-
 }
-
-}
-
-
-
-
-
-
 
 
 
@@ -368,7 +356,7 @@ header {
         display: flex;
         align-items: center;
         margin-top: 0;
-        gap: 20px;
+        gap: 15px;
         border: none;
         opacity: 1;
 
@@ -424,41 +412,34 @@ header {
   }
 
   .home-about {
-
     .container {
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
       gap: 100px;
-      
+
       .image {
         flex: 1 1 2rem;
 
         &.reverse {
           order: -1;
         }
-
       }
-    
+
       .content {
         flex: 1 1 5rem;
-    
+
         h3 {
           font-size: 30px;
           font-weight: 500;
         }
-    
+
         p {
           margin: 20px 0;
         }
-    
       }
-    
     }
-    
-    }
-    
-
+  }
 }
 
 @media (min-width: 992px) {
@@ -498,9 +479,7 @@ header {
   }
 
   .home-about {
-
     .container {
-      
       .image {
         max-width: 400px;
 
@@ -508,26 +487,21 @@ header {
           max-width: 400px;
           max-height: 400px;
         }
-
       }
-    
+
       .content {
         max-width: 600px;
-    
+
         h3 {
           font-size: 40px;
         }
-    
+
         p {
           line-height: 200%;
         }
-    
       }
-    
     }
-    
-    }
-
+  }
 }
 
 @media (min-width: 1200px) {
