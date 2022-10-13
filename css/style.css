@@ -51,6 +51,7 @@ section {
 }
 
 header nav {
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -211,6 +212,17 @@ header nav #close-menu-btn.active {
   font-size: 16px;
   font-weight: 500;
   color: #EB5760;
+}
+.home-news .button-show-more {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 32px 0;
+}
+.home-news .hidden {
+  display: none;
 }
 
 @media (min-width: 400px) {

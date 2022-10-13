@@ -59,6 +59,7 @@ section {
 
 header {
   nav {
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -206,7 +207,7 @@ header {
 
       // !!!!!!!!! FIX IT !!!!!!!!!!!!!!!
 
-      .image { 
+      .image {
         width: 100%;
         overflow: hidden;
 
@@ -250,56 +251,21 @@ header {
       }
     }
   }
+
+  .button-show-more {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 32px 0;
+  }
+
+  .hidden {
+    display: none;
+  }
+  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Media
 
@@ -391,10 +357,9 @@ header {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
+        }
       }
-      }
-
-  }
+    }
   }
 }
 
@@ -428,13 +393,11 @@ header {
   }
   .home-news {
     .box-container {
-  
       .box {
         max-width: 340px;
       }
     }
   }
-
 }
 
 @media (min-width: 1200px) {
