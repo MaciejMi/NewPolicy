@@ -195,7 +195,17 @@ header {
 
 // Home News
 
-.home-news {
+.news {
+
+  .type {
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: $main-color;
+    text-align: center;
+  }
+
   .box-container {
     display: flex;
     flex-direction: column;
@@ -393,7 +403,7 @@ header {
     }
   }
 
-  .home-news {
+  .news {
     .box-container {
       .box {
         max-width: 280px;
@@ -478,7 +488,7 @@ header {
     }
   }
 
-  .home-news {
+  .news {
     .box-container {
       flex-wrap: wrap;
       flex-direction: row;
@@ -552,7 +562,10 @@ header {
       }
     }
   }
-  .home-news {
+  .news {
+    .type {
+      font-size: 48px;
+    }
     .box-container {
       .box {
         max-width: 340px;
