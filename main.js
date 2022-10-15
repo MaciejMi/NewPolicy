@@ -1,8 +1,6 @@
 const nav = document.querySelector('nav ul');
 const openBtn = document.querySelector('#open-menu-btn');
 const closeBtn = document.querySelector('#close-menu-btn');
-const showMoreBtn = document.querySelector('#show-more-btn');
-const hiddenNews = document.querySelector('.hidden');
 
 openBtn.addEventListener('click', () => {
   nav.classList.add('active');
@@ -22,7 +20,19 @@ window.addEventListener('scroll', () => {
   closeBtn.classList.remove('active');
 });
 
+// Account Box
+
+const userBtn = document.querySelector('#user-btn');
+const accountBox = document.querySelector('#account-box');
+
+userBtn.addEventListener('click', () => {
+  accountBox.classList.toggle('active');
+});
+
 // Show More news in home page function
+
+const showMoreBtn = document.querySelector('#show-more-btn');
+const hiddenNews = document.querySelector('.hidden');
 
 window.onload = showMoreNews;
 

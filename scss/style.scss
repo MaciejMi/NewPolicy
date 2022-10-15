@@ -47,6 +47,7 @@ section {
 }
 
 .btn {
+  display: inline-block;
   padding: 12px 24px;
   background-color: $main-color;
   color: $white;
@@ -54,6 +55,10 @@ section {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.4s linear;
+
+  &.admin-btn {
+    padding: 5px 24px;
+  }
 
   &:hover,
   &:focus {
@@ -77,10 +82,15 @@ header {
     background-color: $second-color;
     z-index: 1000;
 
+    img {
+      width: 30px;
+      height: 30px;
+    }
+
     .logo {
       display: flex;
       font-family: 'Raleway', sans-serif;
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 800;
       color: $white;
       align-items: center;
@@ -139,6 +149,43 @@ header {
     #close-menu-btn.active {
       display: block;
     }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      cursor: pointer;
+    }
+
+    .account-box {
+      position: absolute;
+      top: -1000%;
+      right: 0;
+      background-color: $second-color;
+      padding: 12px 32px;
+      width: 250px;
+      height: 180px;
+      font-size: 16px;
+      text-align: center;
+      border: 3px solid $black;
+      transition: all 0.3s ease-in-out;
+
+      &.active {
+        top: 100%;
+      }
+
+      p {
+        color: $white;
+      }
+
+      span {
+        font-weight: 500;
+        color: $main-color;
+      }
+
+      .btn {
+        margin-top: 10px;
+      }
+    }
   }
 }
 
@@ -196,7 +243,6 @@ header {
 // Home News
 
 .news {
-
   .type {
     font-family: 'Raleway', sans-serif;
     font-size: 36px;
@@ -251,6 +297,18 @@ header {
           gap: 5px;
           transition: all 0.3s linear;
 
+          &.edit {
+            color: #fd640e;
+
+            img {
+              display: none;
+            }
+
+            &:hover {
+              letter-spacing: normal;
+            }
+          }
+
           &:hover {
             letter-spacing: 1px;
           }
@@ -260,6 +318,10 @@ header {
           font-size: 16px;
           font-weight: 500;
           color: $main-color;
+
+          &.delete {
+            cursor: pointer;
+          }
         }
       }
     }
@@ -392,6 +454,49 @@ header {
   }
 }
 
+// New News
+
+.new-news {
+  .box-container {
+    background-color: #f8f8f8;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    width: 240px;
+    height: auto;
+    margin: 0 auto;
+
+    .box {
+      display: block;
+
+      input {
+        font-size: 16px;
+        color: $black;
+        margin: 25px 0;
+        padding: 10px 20px;
+        width: 80%;
+        background-color: $white;
+        margin-left: 16px;
+
+        &::placeholder {
+          color: $black;
+        }
+
+        &::-webkit-file-upload-button {
+          display: none;
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+      padding-bottom: 30px;
+    }
+  }
+}
+
 // Media
 
 @media (min-width: 400px) {
@@ -413,6 +518,19 @@ header {
 }
 
 @media (min-width: 576px) {
+  header {
+    nav {
+      img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+    }
+  }
+
   .home {
     .content {
       h1 {
@@ -430,6 +548,16 @@ header {
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
+    }
+  }
+
+  .new-news {
+    .box-container {
+      background-color: #f8f8f8;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 24px;
+      width: 540px;
+      margin: 0 auto;
     }
   }
 }

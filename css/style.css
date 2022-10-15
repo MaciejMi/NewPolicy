@@ -44,6 +44,7 @@ section {
 }
 
 .btn {
+  display: inline-block;
   padding: 12px 24px;
   background-color: #EB5760;
   color: #fff;
@@ -51,6 +52,9 @@ section {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.4s linear;
+}
+.btn.admin-btn {
+  padding: 5px 24px;
 }
 .btn:hover, .btn:focus {
   box-shadow: inset 0 0 0 2em #ce333e;
@@ -69,10 +73,14 @@ header nav {
   background-color: #091D44;
   z-index: 1000;
 }
+header nav img {
+  width: 30px;
+  height: 30px;
+}
 header nav .logo {
   display: flex;
   font-family: "Raleway", sans-serif;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 800;
   color: #fff;
   align-items: center;
@@ -121,6 +129,37 @@ header nav #close-menu-btn {
 header nav #open-menu-btn.active,
 header nav #close-menu-btn.active {
   display: block;
+}
+header nav .buttons {
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+header nav .account-box {
+  position: absolute;
+  top: -1000%;
+  right: 0;
+  background-color: #091D44;
+  padding: 12px 32px;
+  width: 250px;
+  height: 180px;
+  font-size: 16px;
+  text-align: center;
+  border: 3px solid #000;
+  transition: all 0.3s ease-in-out;
+}
+header nav .account-box.active {
+  top: 100%;
+}
+header nav .account-box p {
+  color: #fff;
+}
+header nav .account-box span {
+  font-weight: 500;
+  color: #EB5760;
+}
+header nav .account-box .btn {
+  margin-top: 10px;
 }
 
 .home {
@@ -217,6 +256,15 @@ header nav #close-menu-btn.active {
   gap: 5px;
   transition: all 0.3s linear;
 }
+.news .box-container .box .details a.edit {
+  color: #fd640e;
+}
+.news .box-container .box .details a.edit img {
+  display: none;
+}
+.news .box-container .box .details a.edit:hover {
+  letter-spacing: normal;
+}
 .news .box-container .box .details a:hover {
   letter-spacing: 1px;
 }
@@ -224,6 +272,9 @@ header nav #close-menu-btn.active {
   font-size: 16px;
   font-weight: 500;
   color: #EB5760;
+}
+.news .box-container .box .details span.delete {
+  cursor: pointer;
 }
 .news .button-show-more {
   display: flex;
@@ -325,6 +376,46 @@ header nav #close-menu-btn.active {
   margin-right: 10px;
 }
 
+.new-news .box-container {
+  background-color: #f8f8f8;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+  width: 240px;
+  height: auto;
+  margin: 0 auto;
+}
+.new-news .box-container .box {
+  display: block;
+}
+.new-news .box-container .box input {
+  font-size: 16px;
+  color: #000;
+  margin: 25px 0;
+  padding: 10px 20px;
+  width: 80%;
+  background-color: #fff;
+  margin-left: 16px;
+}
+.new-news .box-container .box input::-moz-placeholder {
+  color: #000;
+}
+.new-news .box-container .box input:-ms-input-placeholder {
+  color: #000;
+}
+.new-news .box-container .box input::placeholder {
+  color: #000;
+}
+.new-news .box-container .box input::-webkit-file-upload-button {
+  display: none;
+}
+.new-news .box-container .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
 @media (min-width: 400px) {
   .home .content .buttons {
     flex-direction: row;
@@ -334,6 +425,13 @@ header nav #close-menu-btn.active {
   }
 }
 @media (min-width: 576px) {
+  header nav img {
+    width: 40px;
+    height: 40px;
+  }
+  header nav .logo {
+    font-size: 24px;
+  }
   .home .content h1 {
     font-size: 48px;
   }
@@ -344,6 +442,13 @@ header nav #close-menu-btn.active {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+  }
+  .new-news .box-container {
+    background-color: #f8f8f8;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 24px;
+    width: 540px;
+    margin: 0 auto;
   }
 }
 @media (min-width: 768px) {
