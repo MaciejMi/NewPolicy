@@ -1,9 +1,9 @@
 @import 'variables.scss';
+@import 'mixin.scss';
 
 *,
 *::after,
 *::before {
-  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -18,43 +18,60 @@ html {
 }
 
 body {
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
 
 section {
-  padding: 1rem;
   margin-bottom: 100px;
+  padding: 1rem;
 }
 
 .wrapper {
-  max-width: 1440px;
   margin: 0 auto;
+  max-width: 1440px;
 }
 
 .heading {
   font-family: 'Raleway', sans-serif;
+  text-align: center;
+  margin-bottom: 100px;
   font-size: 32px;
   font-weight: 700;
   color: $black;
-  margin-bottom: 100px;
-  text-align: center;
 
   &::before {
     content: '';
-    border-left: 4px solid $main-color;
     margin-right: 10px;
+    border-left: 4px solid $main-color;
   }
 }
 
 .btn {
   display: inline-block;
   padding: 12px 24px;
-  background-color: $main-color;
-  color: $white;
-  border-radius: 24px;
   font-weight: 600;
+  color: $white;
+  background-color: $main-color;
+  border-radius: 24px;
+  @include transitionLinear;
   cursor: pointer;
-  transition: all 0.4s linear;
+
+  &.orange {
+    background-color: $orange;
+
+    &:hover {
+      box-shadow: inset 0 0 0 2em $dark-orange;
+    }
+  }
+
+  &.green {
+    background-color: $light-green;
+
+    &:hover {
+      box-shadow: inset 0 0 0 2em $dark-green;
+    }
+  }
 
   &.admin-btn {
     padding: 5px 24px;
@@ -62,43 +79,30 @@ section {
 
   &:hover,
   &:focus {
-    box-shadow: inset 0 0 0 2em #ce333e;
+    box-shadow: inset 0 0 0 2em $main-color-hover;
   }
 }
 
 // Navbar
 
 header {
+  max-width: 1920px;
+
   nav {
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    top: 0;
-    left: 0;
-    right: 0;
     width: 100%;
     background-color: $second-color;
     z-index: 1000;
 
-    img {
-      width: 30px;
-      height: 30px;
-    }
-
     .logo {
-      display: flex;
-      font-family: 'Raleway', sans-serif;
-      font-size: 18px;
-      font-weight: 800;
-      color: $white;
-      align-items: center;
-
-      span {
-        font-family: 'Raleway', sans-serif;
-        color: $main-color;
-      }
+     @include logo();
 
       img {
         margin-right: 8px;
@@ -107,13 +111,13 @@ header {
 
     ul {
       position: absolute;
-      display: block;
       top: -600%;
       left: 0;
       right: 0;
+      display: block;
+      margin-top: 3.5rem;
       background-color: $second-color;
       border-top: 1px solid $main-color;
-      margin-top: 4.5rem;
       opacity: 0;
       transition: all 0.5s ease;
 
@@ -123,14 +127,15 @@ header {
       }
 
       li {
-        font-size: 20px;
         margin: 1.5rem 2rem;
+        font-size: 20px;
         border-left: 0.3rem solid $main-color;
 
         a {
-          color: $white;
-          font-weight: 500;
           margin-left: 10px;
+          font-weight: 500;
+          color: $white;
+          @include transitionLinear;
 
           &.active {
             color: $main-color;
@@ -142,7 +147,6 @@ header {
     #open-menu-btn,
     #close-menu-btn {
       display: none;
-      cursor: pointer;
     }
 
     #open-menu-btn.active,
@@ -150,7 +154,7 @@ header {
       display: block;
     }
 
-    .buttons {
+    .menu-buttons {
       display: flex;
       gap: 20px;
       cursor: pointer;
@@ -160,12 +164,12 @@ header {
       position: absolute;
       top: -1000%;
       right: 0;
-      background-color: $second-color;
+      text-align: center;
       padding: 12px 32px;
       width: 250px;
       height: 180px;
       font-size: 16px;
-      text-align: center;
+      background-color: $second-color;
       border: 3px solid $black;
       transition: all 0.3s ease-in-out;
 
@@ -200,34 +204,30 @@ header {
   border-radius: 0 0 50px 50px;
 
   .content {
-    max-width: 50rem;
+    font-family: 'Raleway', sans-serif;
     text-align: center;
-    padding-top: 10rem;
     margin: 0 auto;
+    padding-top: 10rem;
+    max-width: 50rem;
+    font-weight: 700;
+    color: $white;
+    text-shadow: $text-shadow;
 
     h1 {
-      font-family: 'Raleway', sans-serif;
       font-size: 32px;
-      font-weight: 700;
-      color: $white;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
 
     .line {
-      background-color: $main-color;
+      margin: 30px auto 0 auto;
       height: 5px;
       width: 80vw;
-      margin: 30px auto 0 auto;
+      background-color: $main-color;
     }
 
     h3 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 150%;
-      color: $white;
       margin: 30px 0;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      font-size: 20px;
+      line-height: 150%;
     }
 
     .buttons {
@@ -240,54 +240,83 @@ header {
   }
 }
 
-// Home News
+// Home About
+
+.home-about {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    .image {
+      order: 2;
+
+      img {
+        margin-top: 50px;
+      }
+    }
+
+    .content {
+      h3 {
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      p {
+        margin: 20px 0;
+      }
+    }
+  }
+}
+
+// News
 
 .news {
   .type {
     font-family: 'Raleway', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
     font-size: 36px;
     font-weight: 700;
-    margin-bottom: 20px;
     color: $main-color;
-    text-align: center;
   }
 
   .box-container {
     display: flex;
     flex-direction: column;
-    gap: 50px;
     align-items: center;
     justify-content: center;
+    gap: 50px;
 
     .box {
       max-width: 240px;
       background-color: $white;
       border-radius: 24px;
-      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+      box-shadow: $box-shadow;
       overflow: hidden;
 
       .image {
         width: 100%;
-        overflow: hidden;
-        border-radius: 24px 24px 0 0;
       }
 
       .content {
         margin: 16px;
 
         h3 {
+          margin-bottom: 10px;
           font-size: 18px;
           font-weight: 600;
           color: $main-color;
-          margin-bottom: 10px;
         }
       }
 
       .details {
         display: flex;
         flex-direction: column;
-        gap: 5px;
         margin: 16px;
+        gap: 5px;
 
         a {
           display: flex;
@@ -295,10 +324,10 @@ header {
           font-weight: 600;
           color: $main-color;
           gap: 5px;
-          transition: all 0.3s linear;
+          @include transitionLinear;
 
           &.edit {
-            color: #fd640e;
+            color: $orange;
 
             img {
               display: none;
@@ -329,47 +358,58 @@ header {
 
   .button-show-more {
     display: flex;
-    margin: 0 auto;
     align-items: center;
     text-align: center;
     justify-content: center;
-    margin: 32px 0;
+    margin: 32px auto 32px auto;
   }
+
+  // Add Animation !!!
 
   .hidden {
     display: none;
   }
 }
 
-// Home About
+// New News
 
-.home-about {
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 50px;
+.new-news {
+  .box-container {
+    margin: 0 auto;
+    width: 240px;
+    height: auto;
+    background-color: #f8f8f8;
+    box-shadow: $box-shadow;
+    border-radius: 24px;
 
-    .image {
-      order: 2;
+    .box {
+      display: block;
 
-      img {
-        margin-top: 50px;
-        max-width: 260px;
-        max-height: 260px;
+      input {
+        margin: 25px 0 25px 16px;
+        padding: 10px 20px;
+        width: 80%;
+        font-size: 16px;
+        color: $black;
+        background-color: $white;
+
+        &::placeholder {
+          color: $black;
+        }
+
+        &::-webkit-file-upload-button{
+          display: none;
+        }
       }
     }
 
-    .content {
-      h3 {
-        font-size: 24px;
-        font-weight: 500;
-      }
-
-      p {
-        margin: 20px 0;
-      }
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 30px;
+      gap: 20px;
     }
   }
 }
@@ -383,11 +423,11 @@ header {
   .box-container {
     display: flex;
     flex-direction: column;
-    gap: 50px;
     justify-content: center;
     text-align: center;
     align-items: center;
     margin: 100px 0 50px 0;
+    gap: 50px;
 
     .box {
       padding: 1rem 0;
@@ -397,17 +437,7 @@ header {
       }
 
       .logo {
-        display: flex;
-        font-family: 'Raleway', sans-serif;
-        font-size: 24px;
-        font-weight: 800;
-        color: $white;
-        align-items: center;
-
-        span {
-          font-family: 'Raleway', sans-serif;
-          color: $main-color;
-        }
+        @include logo();
 
         img {
           margin-right: 8px;
@@ -415,10 +445,10 @@ header {
       }
 
       p {
-        max-width: 300px;
         text-align: left;
-        color: $white;
         margin: 1rem 0;
+        max-width: 300px;
+        color: $white;
       }
 
       .social {
@@ -437,10 +467,10 @@ header {
 
       .links {
         display: flex;
-        color: $white;
         justify-content: center;
         margin: 18px 0;
-        transition: all 0.3s linear;
+        color: $white;
+        @include transitionLinear;
 
         &:hover {
           color: $main-color;
@@ -454,48 +484,14 @@ header {
   }
 }
 
-// New News
 
-.new-news {
-  .box-container {
-    background-color: #f8f8f8;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 24px;
-    width: 240px;
-    height: auto;
-    margin: 0 auto;
 
-    .box {
-      display: block;
 
-      input {
-        font-size: 16px;
-        color: $black;
-        margin: 25px 0;
-        padding: 10px 20px;
-        width: 80%;
-        background-color: $white;
-        margin-left: 16px;
 
-        &::placeholder {
-          color: $black;
-        }
 
-        &::-webkit-file-upload-button {
-          display: none;
-        }
-      }
-    }
 
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      justify-content: center;
-      padding-bottom: 30px;
-    }
-  }
-}
+
+
 
 // Media
 
@@ -543,23 +539,19 @@ header {
     }
   }
 
+  .new-news {
+    .box-container {
+      width: 540px;
+    }
+  }
+
   .footer {
     .box-container {
-      display: flex;
       flex-wrap: wrap;
       flex-direction: row;
     }
   }
 
-  .new-news {
-    .box-container {
-      background-color: #f8f8f8;
-      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 24px;
-      width: 540px;
-      margin: 0 auto;
-    }
-  }
 }
 
 @media (min-width: 768px) {
@@ -569,7 +561,7 @@ header {
 
   header {
     nav {
-      padding: 2rem;
+      padding: 18px 32px;
 
       ul {
         position: relative;
@@ -581,18 +573,18 @@ header {
         opacity: 1;
 
         li {
-          font-size: 16px;
           margin: 0;
+          font-size: 16px;
           border: none;
 
           &::after {
             content: '';
             position: relative;
+            left: 5px;
             display: block;
             width: 0%;
             height: 2px;
-            left: 5px;
-            transition: all 0.3s;
+            @include transitionLinear;
           }
 
           &:hover::after {
@@ -623,7 +615,6 @@ header {
 
       .box {
         .details {
-          display: flex;
           flex-direction: row;
           justify-content: space-between;
         }
@@ -633,7 +624,6 @@ header {
 
   .home-about {
     .container {
-      display: flex;
       flex-wrap: wrap;
       flex-direction: row;
       gap: 100px;
@@ -651,7 +641,6 @@ header {
 
         h3 {
           font-size: 30px;
-          font-weight: 500;
         }
 
         p {
@@ -707,8 +696,8 @@ header {
         max-width: 400px;
 
         img {
-          max-width: 400px;
-          max-height: 400px;
+          width: 400px;
+          height: 400px;
         }
       }
 
@@ -746,8 +735,6 @@ header {
 
   .footer {
     .box-container {
-      flex-wrap: wrap;
-      flex-direction: row;
       gap: 100px;
 
       .box {

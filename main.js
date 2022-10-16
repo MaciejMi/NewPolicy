@@ -20,15 +20,6 @@ window.addEventListener('scroll', () => {
   closeBtn.classList.remove('active');
 });
 
-// Account Box
-
-const userBtn = document.querySelector('#user-btn');
-const accountBox = document.querySelector('#account-box');
-
-userBtn.addEventListener('click', () => {
-  accountBox.classList.toggle('active');
-});
-
 // Show More news in home page function
 
 const showMoreBtn = document.querySelector('#show-more-btn');
@@ -47,3 +38,13 @@ function showMoreNews() {
     showMoreBtn.textContent = 'Wyświetl więcej';
   }
 }
+
+// Account Box
+// Something not working !!!
+
+const userBtn = document.querySelector('#user-btn');
+const accountBox = document.querySelector('#account-box');
+
+userBtn.addEventListener('click', () => {
+  accountBox.classList.toggle('active');
+});
