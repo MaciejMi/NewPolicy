@@ -306,24 +306,24 @@ header nav .account-box .btn {
   color: #000;
 }
 
-.home-about .container {
+.about .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
 }
-.home-about .container .image {
+.about .container .image {
   order: 2;
 }
-.home-about .container .image img {
+.about .container .image img {
   margin-top: 50px;
 }
-.home-about .container .content h3 {
+.about .container .content h3 {
   font-size: 24px;
   font-weight: 500;
 }
-.home-about .container .content p {
+.about .container .content p {
   margin: 20px 0;
 }
 
@@ -611,24 +611,24 @@ header nav .account-box .btn {
     flex-direction: row;
     justify-content: space-between;
   }
-  .home-about .container {
+  .about .container {
     flex-wrap: wrap;
     flex-direction: row;
     gap: 100px;
   }
-  .home-about .container .image {
+  .about .container .image {
     flex: 1 1 2rem;
   }
-  .home-about .container .image.reverse {
+  .about .container .image.reverse {
     order: -1;
   }
-  .home-about .container .content {
+  .about .container .content {
     flex: 1 1 5rem;
   }
-  .home-about .container .content h3 {
+  .about .container .content h3 {
     font-size: 30px;
   }
-  .home-about .container .content p {
+  .about .container .content p {
     margin: 20px 0;
   }
 }
@@ -654,20 +654,20 @@ header nav .account-box .btn {
   .news .box-container .box {
     max-width: 340px;
   }
-  .home-about .container .image {
+  .about .container .image {
     max-width: 400px;
   }
-  .home-about .container .image img {
+  .about .container .image img {
     width: 400px;
     height: 400px;
   }
-  .home-about .container .content {
+  .about .container .content {
     max-width: 600px;
   }
-  .home-about .container .content h3 {
+  .about .container .content h3 {
     font-size: 40px;
   }
-  .home-about .container .content p {
+  .about .container .content p {
     line-height: 200%;
   }
 }

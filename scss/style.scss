@@ -355,7 +355,7 @@ header {
 
 // Home About
 
-.home-about {
+.about {
   .container {
     display: flex;
     flex-direction: column;
@@ -757,7 +757,7 @@ header {
     }
   }
 
-  .home-about {
+  .about {
     .container {
       flex-wrap: wrap;
       flex-direction: row;
@@ -825,7 +825,7 @@ header {
     }
   }
 
-  .home-about {
+  .about {
     .container {
       .image {
         max-width: 400px;
