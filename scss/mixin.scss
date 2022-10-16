@@ -1,16 +1,16 @@
-@mixin transitionLinear(){
-    transition: all .3s linear;
+@mixin transitionLinear() {
+  transition: all 0.3s linear;
 }
 
-@mixin logo () {
-    display: flex;
-    font-family: 'Raleway', sans-serif;
-    font-size: 18px;
-    font-weight: 800;
-    color: $white;
-    align-items: center;
+@mixin logo() {
+  display: flex;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: $white;
+  align-items: center;
 
-    span {
-        color: $main-color;
-      }
+  span {
+    color: $main-color;
+  }
 }
