@@ -317,7 +317,7 @@ header {
       padding: 18px 12px;
       width: 220px;
       max-height: 600px;
-      background-color: $light-color;
+      background-color: #eee;
       border-radius: 18px;
       p {
         font-weight: 600;
@@ -473,8 +473,6 @@ header {
     justify-content: center;
     margin: 32px auto 32px auto;
   }
-
-  // Add Animation !!!
 
   .hidden {
     display: none;
@@ -635,7 +633,8 @@ header {
         height: 50px;
         background-color: $main-color;
         border-radius: 24px 24px 24px 24px;
-        
+        overflow: hidden;
+
         &.borderBottom {
           margin: 20px auto 16px auto;
         }
@@ -678,7 +677,6 @@ header {
           color: $main-color;
         }
       }
-
     }
 
     .button {
@@ -687,7 +685,6 @@ header {
       align-items: center;
       margin-top: 32px;
     }
-
   }
 }
 
@@ -783,17 +780,16 @@ header {
   }
 
   .login {
-  
     .box-container {
       width: 450px;
       height: 450px;
-  
+
       .circle {
         top: -80px;
         width: 150px;
         height: 150px;
       }
-  
+
       form {
         .border {
           width: 400px;
@@ -801,10 +797,10 @@ header {
           &.borderBottom {
             margin: 35px auto 16px auto;
           }
-  
+
           input {
             width: 400px;
-  
+
             &::placeholder,
             &:focus {
               font-size: 20px;
@@ -814,10 +810,8 @@ header {
       }
       .remind-password {
         margin-right: 32px;
-
-  
       }
-  
+
       .button {
         display: flex;
         justify-content: center;
@@ -826,7 +820,6 @@ header {
       }
     }
   }
-
 }
 
 @media (min-width: 768px) {
@@ -836,7 +829,7 @@ header {
 
   header {
     nav {
-      padding: 18px 32px;
+      padding: 18px 64px;
 
       ul {
         position: relative;
@@ -871,6 +864,12 @@ header {
 
       #open-menu-btn.active {
         display: none;
+      }
+
+      .menu-buttons {
+        #user-btn {
+          display: block;
+        }
       }
     }
   }
@@ -991,11 +990,10 @@ header {
   }
 
   .login {
-  
     .box-container {
       width: 750px;
       height: 550px;
-  
+
       form {
         .border {
           width: 600px;
@@ -1004,11 +1002,11 @@ header {
           &.borderBottom {
             margin: 45px auto 16px auto;
           }
-  
+
           input {
             width: 600px;
             height: 80px;
-  
+
             &::placeholder,
             &:focus {
               font-size: 28px;
@@ -1022,17 +1020,15 @@ header {
         max-width: 1200px;
         font-size: 20px;
       }
-  
+
       .button {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 32px;
       }
-
     }
   }
-
 }
 
 @media (min-width: 1200px) {
