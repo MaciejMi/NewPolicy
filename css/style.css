@@ -281,7 +281,7 @@ header nav .account-box .btn {
   padding: 18px 12px;
   width: 220px;
   max-height: 600px;
-  background-color: #e9e9e9;
+  background-color: #f8f8f8;
   border-radius: 18px;
 }
 .quiz .quizBox .quizTextBorder p {
@@ -292,7 +292,8 @@ header nav .account-box .btn {
   flex-direction: column;
   gap: 10px;
 }
-.quiz .quizBox .quizTextForm button a, .quiz .quizBox .quizTextForm button p {
+.quiz .quizBox .quizTextForm button a,
+.quiz .quizBox .quizTextForm button p {
   font-size: 16px;
   font-weight: 700;
   color: #fff;
@@ -510,6 +511,99 @@ header nav .account-box .btn {
   margin-right: 10px;
 }
 
+.login {
+  display: flex;
+  background: url("../images/home-image.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.login .box-container {
+  width: 260px;
+  height: 370px;
+  background-color: #f8f8f8;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+}
+.login .box-container .circle {
+  position: relative;
+  top: -40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #eb5760;
+}
+.login .box-container .circle img {
+  margin-right: 6px;
+  width: 60px;
+  height: 60px;
+}
+.login .box-container form .border {
+  display: flex;
+  margin: 0 auto;
+  width: 240px;
+  height: 50px;
+  background-color: #eb5760;
+  border-radius: 24px 24px 24px 24px;
+}
+.login .box-container form .border.borderBottom {
+  margin: 20px auto 16px auto;
+}
+.login .box-container form .border img {
+  padding: 5px;
+}
+.login .box-container form .border input {
+  display: flex;
+  width: 240px;
+  background-color: #091d44;
+  border-radius: 0 24px 24px 0;
+}
+.login .box-container form .border input::-moz-placeholder {
+  padding-left: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+.login .box-container form .border input:-ms-input-placeholder {
+  padding-left: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+.login .box-container form .border input::placeholder, .login .box-container form .border input:focus {
+  padding-left: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+.login .box-container .remind-password {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 16px;
+  max-width: 480px;
+  color: #000;
+}
+.login .box-container .remind-password a {
+  color: #000;
+  transition: all 0.3s linear;
+}
+.login .box-container .remind-password a:hover {
+  color: #eb5760;
+}
+.login .box-container .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+}
+
 @media (min-width: 400px) {
   .home .content .buttons {
     flex-direction: row;
@@ -561,6 +655,42 @@ header nav .account-box .btn {
   .footer .box-container {
     flex-wrap: wrap;
     flex-direction: row;
+  }
+  .login .box-container {
+    width: 450px;
+    height: 450px;
+  }
+  .login .box-container .circle {
+    top: -80px;
+    width: 150px;
+    height: 150px;
+  }
+  .login .box-container form .border {
+    width: 400px;
+  }
+  .login .box-container form .border.borderBottom {
+    margin: 35px auto 16px auto;
+  }
+  .login .box-container form .border input {
+    width: 400px;
+  }
+  .login .box-container form .border input::-moz-placeholder {
+    font-size: 20px;
+  }
+  .login .box-container form .border input:-ms-input-placeholder {
+    font-size: 20px;
+  }
+  .login .box-container form .border input::placeholder, .login .box-container form .border input:focus {
+    font-size: 20px;
+  }
+  .login .box-container .remind-password {
+    margin-right: 32px;
+  }
+  .login .box-container .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
   }
 }
 @media (min-width: 768px) {
@@ -669,6 +799,41 @@ header nav .account-box .btn {
   }
   .about .container .content p {
     line-height: 200%;
+  }
+  .login .box-container {
+    width: 750px;
+    height: 550px;
+  }
+  .login .box-container form .border {
+    width: 600px;
+    height: 80px;
+  }
+  .login .box-container form .border.borderBottom {
+    margin: 45px auto 16px auto;
+  }
+  .login .box-container form .border input {
+    width: 600px;
+    height: 80px;
+  }
+  .login .box-container form .border input::-moz-placeholder {
+    font-size: 28px;
+  }
+  .login .box-container form .border input:-ms-input-placeholder {
+    font-size: 28px;
+  }
+  .login .box-container form .border input::placeholder, .login .box-container form .border input:focus {
+    font-size: 28px;
+  }
+  .login .box-container .remind-password {
+    margin-right: 76px;
+    max-width: 1200px;
+    font-size: 20px;
+  }
+  .login .box-container .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
   }
 }
 @media (min-width: 1200px) {

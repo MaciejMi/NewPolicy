@@ -14,3 +14,10 @@
     color: $main-color;
   }
 }
+
+@mixin bgImage() {
+  display: flex;
+  background: url('../images/home-image.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
