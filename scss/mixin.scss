@@ -21,3 +21,26 @@
   background-size: cover;
   background-position: center;
 }
+
+@mixin formContainer() {
+  margin: 0 auto;
+  width: 240px;
+  height: auto;
+  box-shadow: $box-shadow;
+  border-radius: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin inputForm {
+  margin: 25px 0 25px 16px;
+  padding: 10px 20px;
+  width: 90%;
+  font-size: 16px;
+  color: $black;
+  background-color: $light-color;
+
+  &::placeholder {
+    color: $black;
+  }
+}

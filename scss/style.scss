@@ -483,27 +483,13 @@ header {
 
 .new-news {
   .box-container {
-    margin: 0 auto;
-    width: 240px;
-    height: auto;
-    background-color: $light-color;
-    box-shadow: $box-shadow;
-    border-radius: 24px;
+    @include formContainer();
 
     .box {
       display: block;
 
       input {
-        margin: 25px 0 25px 16px;
-        padding: 10px 20px;
-        width: 80%;
-        font-size: 16px;
-        color: $black;
-        background-color: $white;
-
-        &::placeholder {
-          color: $black;
-        }
+        @include inputForm();
 
         &::-webkit-file-upload-button {
           display: none;
@@ -518,6 +504,71 @@ header {
       justify-content: center;
       padding-bottom: 30px;
       gap: 20px;
+    }
+  }
+}
+
+// Kontakt
+
+.contact {
+  h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    line-height: 150%;
+    font-size: 20px;
+  }
+
+  .contactForm {
+    @include formContainer();
+
+    input,
+    textarea {
+      @include inputForm();
+      resize: none;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+    }
+
+    .button {
+      display: flex;
+      padding-bottom: 16px;
+
+      .btn {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .anotherForm {
+    margin: 100px auto 0 auto;
+    width: 240px;
+    height: auto;
+
+    .githubs {
+      li {
+        a {
+          display: flex;
+          align-items: center;
+          text-align: center;
+          justify-content: center;
+          margin: 25px 0;
+          font-size: 20px;
+          color: $black;
+          @include transitionLinear();
+
+          &:hover {
+            color: $main-color;
+          }
+
+          img {
+            margin-right: 15px;
+          }
+        }
+      }
     }
   }
 }
@@ -706,6 +757,27 @@ header {
       }
     }
   }
+
+  .contact {
+    .contactForm,
+    .anotherForm {
+      width: 340px;
+
+      input,
+      textarea {
+        padding: 12px;
+        font-size: 20px;
+      }
+
+      .githubs {
+        li {
+          a {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 576px) {
@@ -769,6 +841,26 @@ header {
   .new-news {
     .box-container {
       width: 540px;
+    }
+  }
+
+  .contact {
+    .contactForm,
+    .anotherForm {
+      width: 540px;
+
+      input,
+      textarea {
+        font-size: 24px;
+      }
+
+      .githubs {
+        li {
+          a {
+            font-size: 24px;
+          }
+        }
+      }
     }
   }
 
@@ -921,6 +1013,12 @@ header {
           margin: 20px 0;
         }
       }
+    }
+  }
+
+  .contact {
+    h2 {
+      font-size: 30px;
     }
   }
 }

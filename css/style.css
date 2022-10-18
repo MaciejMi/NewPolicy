@@ -411,9 +411,10 @@ header nav .account-box .btn {
   margin: 0 auto;
   width: 240px;
   height: auto;
-  background-color: #f8f8f8;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 24px;
+  justify-content: center;
+  align-items: center;
 }
 .new-news .box-container .box {
   display: block;
@@ -421,10 +422,10 @@ header nav .account-box .btn {
 .new-news .box-container .box input {
   margin: 25px 0 25px 16px;
   padding: 10px 20px;
-  width: 80%;
+  width: 90%;
   font-size: 16px;
   color: #000;
-  background-color: #fff;
+  background-color: #f8f8f8;
 }
 .new-news .box-container .box input::-moz-placeholder {
   color: #000;
@@ -445,6 +446,76 @@ header nav .account-box .btn {
   justify-content: center;
   padding-bottom: 30px;
   gap: 20px;
+}
+
+.contact h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  line-height: 150%;
+  font-size: 20px;
+}
+.contact .contactForm {
+  margin: 0 auto;
+  width: 240px;
+  height: auto;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+  justify-content: center;
+  align-items: center;
+}
+.contact .contactForm input,
+.contact .contactForm textarea {
+  margin: 25px 0 25px 16px;
+  padding: 10px 20px;
+  width: 90%;
+  font-size: 16px;
+  color: #000;
+  background-color: #f8f8f8;
+  resize: none;
+}
+.contact .contactForm input::-moz-placeholder, .contact .contactForm textarea::-moz-placeholder {
+  color: #000;
+}
+.contact .contactForm input:-ms-input-placeholder, .contact .contactForm textarea:-ms-input-placeholder {
+  color: #000;
+}
+.contact .contactForm input::placeholder,
+.contact .contactForm textarea::placeholder {
+  color: #000;
+}
+.contact .contactForm input::-webkit-outer-spin-button, .contact .contactForm input::-webkit-inner-spin-button,
+.contact .contactForm textarea::-webkit-outer-spin-button,
+.contact .contactForm textarea::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.contact .contactForm .button {
+  display: flex;
+  padding-bottom: 16px;
+}
+.contact .contactForm .button .btn {
+  margin: 0 auto;
+}
+.contact .anotherForm {
+  margin: 100px auto 0 auto;
+  width: 240px;
+  height: auto;
+}
+.contact .anotherForm .githubs li a {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 25px 0;
+  font-size: 20px;
+  color: #000;
+  transition: all 0.3s linear;
+}
+.contact .anotherForm .githubs li a:hover {
+  color: #eb5760;
+}
+.contact .anotherForm .githubs li a img {
+  margin-right: 15px;
 }
 
 .footer {
@@ -612,6 +683,21 @@ header nav .account-box .btn {
   .news .box-container .box {
     max-width: 280px;
   }
+  .contact .contactForm,
+.contact .anotherForm {
+    width: 340px;
+  }
+  .contact .contactForm input,
+.contact .contactForm textarea,
+.contact .anotherForm input,
+.contact .anotherForm textarea {
+    padding: 12px;
+    font-size: 20px;
+  }
+  .contact .contactForm .githubs li a,
+.contact .anotherForm .githubs li a {
+    font-size: 20px;
+  }
 }
 @media (min-width: 576px) {
   header nav img {
@@ -652,6 +738,20 @@ header nav .account-box .btn {
   }
   .new-news .box-container {
     width: 540px;
+  }
+  .contact .contactForm,
+.contact .anotherForm {
+    width: 540px;
+  }
+  .contact .contactForm input,
+.contact .contactForm textarea,
+.contact .anotherForm input,
+.contact .anotherForm textarea {
+    font-size: 24px;
+  }
+  .contact .contactForm .githubs li a,
+.contact .anotherForm .githubs li a {
+    font-size: 24px;
   }
   .footer .box-container {
     flex-wrap: wrap;
@@ -764,6 +864,9 @@ header nav .account-box .btn {
   }
   .about .container .content p {
     margin: 20px 0;
+  }
+  .contact h2 {
+    font-size: 30px;
   }
 }
 @media (min-width: 992px) {
