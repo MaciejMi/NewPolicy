@@ -10,13 +10,13 @@
   list-style: none;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
+}
+
+html {
+  scroll-padding-top: 400px;
 }
 
 section {
@@ -104,13 +104,15 @@ header nav {
   top: 0;
   left: 0;
   right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 1rem;
   width: 100%;
   background-color: #091d44;
   z-index: 1000;
+}
+header nav .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 header nav .logo {
   display: flex;
@@ -241,6 +243,12 @@ header nav .account-box .btn {
   flex-direction: column;
   align-items: center;
 }
+.quiz .quizText {
+  color: #000;
+}
+.quiz h3.headingQuiz {
+  padding-top: 2rem;
+}
 .quiz .quizBox {
   display: flex;
   flex-direction: column;
@@ -328,6 +336,37 @@ header nav .account-box .btn {
   margin: 20px 0;
 }
 
+.buttons-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+a.edit {
+  color: #ff850f;
+}
+a.edit img {
+  display: none;
+}
+a.edit:hover {
+  letter-spacing: normal;
+}
+
+a.delete {
+  cursor: pointer;
+  color: #b5000b;
+}
+
+.news .date,
+.news .author {
+  font-weight: bold;
+  text-align: right;
+}
+.news img {
+  max-width: 250px;
+  float: left;
+  border-radius: 25px;
+  padding: 0 2rem;
+}
 .news .type {
   font-family: "Raleway", sans-serif;
   text-align: center;
@@ -376,15 +415,6 @@ header nav .account-box .btn {
   gap: 5px;
   transition: all 0.3s linear;
 }
-.news .box-container .box .details a.edit {
-  color: #ffa400;
-}
-.news .box-container .box .details a.edit img {
-  display: none;
-}
-.news .box-container .box .details a.edit:hover {
-  letter-spacing: normal;
-}
 .news .box-container .box .details a:hover {
   letter-spacing: 1px;
 }
@@ -392,9 +422,6 @@ header nav .account-box .btn {
   font-size: 16px;
   font-weight: 500;
   color: #eb5760;
-}
-.news .box-container .box .details span.delete {
-  cursor: pointer;
 }
 .news .button-show-more {
   display: flex;
@@ -592,6 +619,10 @@ header nav .account-box .btn {
   justify-content: center;
   margin: 0;
 }
+.login .error {
+  text-align: center;
+  color: #EB5760;
+}
 .login .box-container {
   width: 260px;
   height: 370px;
@@ -636,20 +667,6 @@ header nav .account-box .btn {
   width: 240px;
   background-color: #091d44;
   border-radius: 0 24px 24px 0;
-}
-.login .box-container form .border input::-moz-placeholder {
-  padding-left: 16px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-}
-.login .box-container form .border input:-ms-input-placeholder {
-  padding-left: 16px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-}
-.login .box-container form .border input::placeholder, .login .box-container form .border input:focus {
   padding-left: 16px;
   font-size: 16px;
   font-weight: 600;
@@ -674,6 +691,45 @@ header nav .account-box .btn {
   justify-content: center;
   align-items: center;
   margin-top: 32px;
+}
+
+.party-box,
+.ideologies-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+  align-items: center;
+  text-align: center;
+}
+
+.parties-group,
+.ideologies-group {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.parties-group img,
+.ideologies-group img {
+  border-radius: 25px;
+}
+
+.party-box,
+.ideologies-box {
+  background-color: #f8f8f8;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+}
+.party-box img,
+.ideologies-box img {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.party-box meter,
+.ideologies-box meter {
+  height: 25px;
 }
 
 @media (min-width: 400px) {
@@ -739,6 +795,9 @@ header nav .account-box .btn {
   .new-news .box-container {
     width: 540px;
   }
+  .news img {
+    max-width: 500px;
+  }
   .contact .contactForm,
 .contact .anotherForm {
     width: 540px;
@@ -792,6 +851,10 @@ header nav .account-box .btn {
     justify-content: center;
     align-items: center;
     margin-top: 32px;
+  }
+  .party-box,
+.ideologies-box {
+    width: 40%;
   }
 }
 @media (min-width: 768px) {
@@ -941,6 +1004,10 @@ header nav .account-box .btn {
     justify-content: center;
     align-items: center;
     margin-top: 32px;
+  }
+  .party-box,
+.ideologies-box {
+    width: 20%;
   }
 }
 @media (min-width: 1200px) {

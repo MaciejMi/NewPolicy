@@ -1,3 +1,11 @@
+<?php
+session_start();
+include "./php/connection.php";
+$query_str = "SELECT * FROM articles WHERE articles.id > 0 ORDER BY articles.date";
+$query = $db->query($query_str);
+$result = $query->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -9,24 +17,23 @@
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
   <header>
     <nav>
       <div class="wrapper">
-        <a href="./index.php" class="logo"><img src="images/logo.png" alt="" />New<span>Policy</span></a>
+        <a href="./index.php" class="logo"><img src="./images/logo.png" alt="" />New<span>Policy</span></a>
         <ul>
           <li><a href="./about.html#about">O nas</a></li>
           <li><a href="./php/test.php#quiz">Test</a></li>
-          <li><a href="./newsy.php#news">Newsy</a></li>
-          <li><a class="active" href="./contact.html#contact">Kontakt</a></li>
+          <li><a class="active" href="./newsy.php#news">Newsy</a></li>
+          <li><a href="./contact.html#contact">Kontakt</a></li>
         </ul>
-        <img src="./images/icon-menu-btn-open.svg" alt="" id="open-menu-btn" class="active" />
-        <img src="./images/icon-menu-btn-close.svg" alt="" id="close-menu-btn" />
+        <img src="images/icon-menu-btn-open.svg" alt="" id="open-menu-btn" class="active" />
+        <img src="images/icon-menu-btn-close.svg" alt="" id="close-menu-btn" />
       </div>
     </nav>
   </header>
@@ -45,37 +52,20 @@
     </div>
   </section>
 
-  <section class="contact">
+  <section class="news" id="news">
+    <h1 class="heading">Newsy</h1>
     <div class="wrapper">
-      <h1 class="heading">Kontakt</h1>
-
-      <h2>Masz jakieś pytania? Skontaktuj się z nami!</h2>
-      <div class="anotherForm" id = "contact">
-        <div class="githubs">
-          <li>
-            <a target="_blank" href="https://github.com/MaciejMi"><img src="images/icon-github-red.svg"
-                alt="" />Kserix</a>
-          </li>
-          <li>
-            <a target="_blank" href="https://github.com/Greemi1"><img src="images/icon-github-red.svg"
-                alt="" />Greemi</a>
-          </li>
-          <li>
-            <a target="_blank" href="https://github.com/Szubzdov" alt="" /><img src="images/icon-github-red.svg"
-              alt="" />David</a>
-          </li>
-          <li>
-            <a target="_blank" href="https://github.com/RekordowyGeniusz"><img src="images/icon-github-red.svg"
-                alt="" />Gabriel</a>
-          </li>
-          <li>
-            <a target="_blank" href="https://github.com/BartekkSl"><img src="images/icon-github-red.svg"
-                alt="" />Bartek</a>
-          </li>
+      <?php foreach ($result as $r) : ?>
+        <div class="news-box">
+          <img src="./images/custom/<?= $r[2] ?>" alt="">
+          <h2><?= $r[1] ?></h2>
+          <p>(<?= $r[4] ?>)</p>
+          <p><?= substr($r[3], 0, strpos($r[3], '.')) . '.'; ?></p>
+          <a class="btn" href="./php/displayNews.php?id=<?= $r[0] ?>">Czytaj wiecej</a>
         </div>
-      </div>
-    </div>
+      <?php endforeach; ?>
   </section>
+
 
   <section class="footer">
     <div class="footer">
@@ -83,7 +73,7 @@
         <div class="box first">
           <a href="./index.php" class="logo"><img src="images/logo.png" alt="" />New<span>Policy</span></a>
           <p>Nasze media społecznościowe</p>
-                 <div class="social">
+          <div class="social">
             <a target = "_blank" href="https://github.com/NewPolicyTeam"><img src="images/icon-github.svg" alt="" /></a>
             <a target = "_blank"  href="https://www.facebook.com/profile.php?id=100087243605302"><img src="images/icon-facebook.svg" alt="" /></a>
             <a target = "_blank" href="https://www.instagram.com/newpolicyteam/"><img src="images/icon-instagram.svg" alt="" /></a>
